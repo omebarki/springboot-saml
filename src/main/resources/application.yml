@@ -1,0 +1,39 @@
+server:
+  ssl:
+    key-store: classpath:saml/samlKeystore.jks
+    # The password used to generate the certificate
+    key-store-password: nalle123
+    # The alias mapped to the certificate
+    key-alias: omarserver
+
+security:
+  require-ssl: true
+
+authentication:
+  saml:
+    idp:
+      metadata-url: https://domainserverpc.greenhouse.local/federationmetadata/2007-06/federationmetadata.xml
+    sp:
+      entity-id: https://omarserver:8080/adfs/service/trust
+      auth:
+        login-success-url: /landing
+        login-failure-url: /error
+        logout-success-url: /
+
+
+#
+#logs
+#
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          saml: DEBUG
+      opensaml: DEBUG
+    com:
+      vdenotaris:
+        spring:
+          boot:
+            security:
+              saml: DEBUG
