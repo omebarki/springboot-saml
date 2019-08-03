@@ -12,9 +12,9 @@ security:
 authentication:
   saml:
     idp:
-      metadata-url: https://domainserverpc.greenhouse.local/federationmetadata/2007-06/federationmetadata.xml
+      metadata-url: http://keycloak-omarprj.192.168.99.100.nip.io/auth/realms/keycloak-springboot-realm/protocol/saml/descriptor
     sp:
-      entity-id: https://omarserver:8080/adfs/service/trust
+      entity-id: com:omar:sp
       auth:
         login-success-url: /landing
         login-failure-url: /error
