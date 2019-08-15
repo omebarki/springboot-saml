@@ -12,7 +12,7 @@ security:
 authentication:
   saml:
     idp:
-      metadata-url: D:/Donnees\MEBARKI/idea_workspace/springboot-saml/federationmetadata.xml
+      metadata-url: https://domainserverpc.greenhouse.local/federationmetadata/2007-06/federationmetadata.xml
     sp:
       entity-id: https://omarserver:8080/adfs/service/trust
       auth:
